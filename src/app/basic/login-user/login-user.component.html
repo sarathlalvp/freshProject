@@ -1,0 +1,80 @@
+<!-- <mat-toolbar color="primary"> -->
+  <!-- <mat-toolbar-row> -->
+    <!-- <span class="example-fill-remaining-space"></span> -->
+    <!-- <span class="align-center"></span>
+    <span class="example-spacer"></span>
+    <span class="example-spacer"></span> -->
+    <!-- <div class="main_heading">
+      <label>UL ASSETS</label> -->
+      <!-- <button mat-button [routerLink]="['/signup']">SIGNUP</button> -->
+      <!-- <button mat-button [routerLink]="['/login']">LOGIN</button> -->
+    <!-- </div>
+  </mat-toolbar-row> -->
+
+<mat-card class="mat-card">
+    <mat-card-header> <mat-card-title>Login</mat-card-title> </mat-card-header>
+    <mat-card-content class="mat-card-content">
+      <form class="example-form" [formGroup]="myForm" (ngSubmit)="submitForm(loginModel)" novalidate>
+        <table class="example-full-width" name="login-table" cellspacing="0">
+          <tr>
+            <td>
+              <mat-form-field class="example-full-width user-width">
+                <input
+                  matInput
+                  placeholder="UserName"
+                  name="username"
+                  formControlName="username"
+                  type="text"
+                  [(ngModel)]="loginModel.userName"
+                  required
+                />
+                <mat-error class="error-name" *ngIf="checkError('username', 'required')">UserName is required</mat-error>
+                <mat-error class="error-name" *ngIf="checkError('username', 'minlength')">UserName should be more than 6 characters</mat-error>
+                <mat-error class="error-name" *ngIf="checkError('username', 'maxlength')">UserName should be less than 12 characters</mat-error>
+              </mat-form-field>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <mat-form-field class="example-full-width user-width">
+                <input
+                  matInput
+                  placeholder="Password"
+                  type="password"
+                  name="password"
+                  formControlName="password"
+                  [(ngModel)]="loginModel.password"
+                  required
+                />
+                <mat-error class="error-name" *ngIf="checkError('password', 'required')">Password is required</mat-error>
+                <mat-error class="error-name" *ngIf="checkError('password', 'minlength')">Password should be more than 6 characters</mat-error>
+                <mat-error class="error-name" *ngIf="checkError('password', 'maxlength')">Password should be less than 12 characters</mat-error>
+                
+              </mat-form-field>
+            </td>
+          </tr>
+        </table>
+  
+        <!-- <div *ngIf="errors" style="color:red;">{{ errors.message }}</div>
+  
+        <div *ngIf="field_errors" style="color:red;">{{ field_errors }}</div> -->
+  
+        <mat-card-actions class="login-button">
+          <div class="login-button log">
+            <button
+              width="250px"
+              mat-raised-button
+              color="primary"
+              class="login-button btn"
+              type="submit"
+            >
+              Login
+            </button>
+          </div>
+        </mat-card-actions>
+      </form>
+    </mat-card-content>
+  </mat-card>
+
+
+  
