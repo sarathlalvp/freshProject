@@ -15,7 +15,7 @@ export class LoginUserComponent implements OnInit {
    this.loginModel=new Login;
     console.log("enter login");
     this.reactiveForm()
-    
+    console.log("tesssst");
   }
     /* Reactive form */
     reactiveForm() {
